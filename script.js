@@ -1,10 +1,16 @@
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
+const grid = getElementById("grid");
 
 //Add a row
 function addR() {
     alert("Clicked Add Row")
+    if (numRows === 0 && numCols === 0) {
+        grid.innerHTML = <tr><td></td></tr>;
+        numRows = 1;
+        numCols = 1;
+    }
 }
 //Add a column
 function addC() {
