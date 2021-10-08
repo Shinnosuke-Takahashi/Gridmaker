@@ -3,7 +3,7 @@
 Prof. Melissa Lynch - Section 1 Fall 2021
 
 # Contributors 
-Shinnosuke Takahashi - Shinnosuke-Takahashi
+Shinnosuke Takahashi - Shinnosuke-Takahashi  
 Ashley Gong - ashleyg101 
 
 # User Stories
