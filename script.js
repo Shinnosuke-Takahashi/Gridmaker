@@ -6,9 +6,12 @@ const grid = document.getElementById("grid");
 //Add a row
 function addR() {
     alert("Clicked Add Row")
-        grid.innerHTML = "<tr><th>blah</th></tr>";
-        numRows = 1;
-        numCols = 1;
+    let cell = document.createElement("div")
+    cell.innerHTML = "blah";
+    grid.appendChild(cell);
+    numRows++;
+    numCols++;
+
 }
 //Add a column
 function addC() {
