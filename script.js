@@ -7,11 +7,14 @@ const grid = document.getElementById("grid");
 function addR() {
     alert("Clicked Add Row")
     let cell = document.createElement("tr");
-    cell.innerHTML = "blah";
+    cell.innerHTML += "<td>blah</td>";
+    for (i in numCols) {
+        cell.innerHTML += "<td>blah</td>";
+    }
     grid.appendChild(cell);
-    numRows++;
     numCols++;
-}
+    numRows++;
+};
 //Add a column
 function addC() {
     alert("Clicked Add Col")
