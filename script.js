@@ -2,6 +2,14 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 const grid = document.getElementById("grid");
+/*
+things to consider:
+is the new row added/removed on/from the left or right, OR does the creation/removal of a new row/col
+refresh the entire grid
+
+creation of node objects with color property
+*/
+
 
 //Add a row
 function addR() {
