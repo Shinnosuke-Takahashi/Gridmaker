@@ -32,17 +32,17 @@ function addR() {
 //Add a column
 function addC() {
     //alert("Clicked Add Col")
-    let tableBody = grid.tBodies[0];
 	if (numCols === 0) {
         numRows = 0;
         grid.insertRow(-1).insertCell(-1).style.backgroundColor = colorSelected;
         numRows++;
         numCols++;
     }
+    //THE ELSE IS BROKEN
     else {  
         for (let i = 0; i < numCols; i++) 
         {
-            tableBody.rows[i].insertCell(-1).style.backgroundColor = colorSelected;
+            grid.rows[i].insertCell(-1).style.backgroundColor = colorSelected;
         }
         numCols++; 
     } 
