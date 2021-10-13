@@ -1,6 +1,9 @@
+//VARIABLE DECLARATIONS -- DO NOT EDIT
 let numRows = 0;
 let numCols = 0;
-let colorSelected; 
+let colorSelected;
+let grid = document.getElementById("grid");
+
 
 /*
 things to consider:
@@ -10,7 +13,6 @@ NEED TO ADD COLOR FUNCTIONALITY
 //Add a row
 function addR() {
     //alert("Clicked Add Row");
-    let grid = document.getElementById("grid");
     let newRow = grid.insertRow(-1);
     let newCell = newRow.insertCell();
     if (numRows === 0) {   
@@ -29,7 +31,6 @@ function addR() {
 //Add a column
 function addC() {
     //alert("Clicked Add Col")
-    let grid = document.getElementById("grid");
     let tableBody = grid.tBodies[0];
 	if (numCols === 0) {
         grid.insertRow(0).insertCell();
@@ -47,11 +48,19 @@ function addC() {
 
 //Remove a row
 function removeR() {
-    alert("Clicked Remove Row")
+    //alert("Clicked Remove Row")
+    grid.deleteRow(-1);
+    numRows--;
 }
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+    //alert("Clicked Remove Col")
+    for (let i = 0; i < grid.rows.length; i++) {
+        if (grid.rows[i].cells.length > 0) {
+            grid.rows[i].deleteCell(-1);
+        }
+    }
+    numCols--;
 }
 //sets global var for selected color
 function selected(){
