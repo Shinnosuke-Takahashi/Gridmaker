@@ -1,27 +1,34 @@
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
-const grid = document.getElementById("grid");
+
 /*
 things to consider:
-is the new row added/removed on/from the left or right, OR does the creation/removal of a new row/col
-refresh the entire grid
-
-creation of node objects with color property
+new stuff is added on right side and taken away on right side
 */
 
 
 //Add a row
 function addR() {
-    alert("Clicked Add Row")
-    let cell = document.createElement("tr");
-    cell.innerHTML += "<td>blah</td>";
-    for (i in numCols) {
-        cell.innerHTML += "<td>blah</td>";
+    alert("Clicked Add Row");
+    let grid = document.getElementById("grid");
+    let newRow = grid.insertRow();
+    let newCell = newRow.insertCell();
+    if (numRows === 0) {    
+        newCell;
+        //coloring does not work
+        //grid.getElementsByTagName("tbody").getElementsByTagName("tr").getElementsByTagName("td").style.backgroundColor = colorSelected;
+        numRows++;
+        numCols++;
     }
-    grid.appendChild(cell);
-    numCols++;
-    numRows++;
+    else {
+        for (i in numCols) {
+            newCell;
+            //coloring does not work
+            //grid.getElementsByTagName("tbody").getElementsByTagName("tr").getElementsByTagName("td").style.backgroundColor = colorSelected;
+        }
+        numRows++;
+    }
 };
 //Add a column
 function addC() {
