@@ -4,28 +4,25 @@ let colorSelected;
 
 /*
 things to consider:
-new stuff is added on right side and taken away on right side
+NEED TO ADD COLOR FUNCTIONALITY
 */
-
 
 //Add a row
 function addR() {
     alert("Clicked Add Row");
     let grid = document.getElementById("grid");
-    let newRow = grid.insertRow();
+    let newRow = grid.insertRow(-1);
     let newCell = newRow.insertCell();
-    if (numRows === 0) {    
-        newCell;
-        //coloring does not work
-        //grid.getElementsByTagName("tbody").getElementsByTagName("tr").getElementsByTagName("td").style.backgroundColor = colorSelected;
+    let tableBody = grid.tBodies[0];
+    if (numRows === 0) {   
+        newRow;
         numRows++;
         numCols++;
     }
     else {
-        for (i in numCols) {
-            newCell;
-            //coloring does not work
-            //grid.getElementsByTagName("tbody").getElementsByTagName("tr").getElementsByTagName("td").style.backgroundColor = colorSelected;
+        newRow;
+        for (let i = 1; i < numCols; i++) {
+            newRow.insertCell(i);
         }
         numRows++;
     }
@@ -33,6 +30,13 @@ function addR() {
 //Add a column
 function addC() {
     alert("Clicked Add Col")
+    let grid = document.getElementById("grid");
+    let tableBody = grid.tBodies[0];
+	for (let i = 0; i < tableBody.rows.length; i++) 
+    {
+		let newCell = tableBody.rows[i].insertCell(-1);
+    }
+    numCols++;  
 }
 
 //Remove a row
