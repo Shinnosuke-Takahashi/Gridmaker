@@ -8,12 +8,15 @@ Ashley Gong - ashleyg101
 
 # User Stories
 
-- [ ] add rows to the grid
-- [ ] add columns to the grid
-- [ ] remove rows from the grid
-- [ ] remove columns from the grid
-- [ ] select a color from a dropdown menu of colors
+- [x] add rows to the grid
+- [x] add columns to the grid
+- [x] remove rows from the grid
+- [x] remove columns from the grid
+- [x] select a color from a dropdown menu of colors
 - [ ] click on a single cell, changing its color to the currently selected color
 - [ ] fill all uncolored cells with the currently selected color
 - [ ] fill all cells with the currently selected color
 - [ ] clear all cells/restore all cells to their original/initial color
+
+# Notes:
+must make it so that new rows/columns have selected color
