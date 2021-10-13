@@ -39,7 +39,7 @@ function addC() {
     else {
         for (let i = 0; i < tableBody.rows.length; i++) 
         {
-            let newCell = tableBody.rows[i].insertCell(-1);
+            tableBody.rows[i].insertCell(-1);
         }
         numCols++; 
     } 
