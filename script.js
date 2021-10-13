@@ -9,13 +9,12 @@ NEED TO ADD COLOR FUNCTIONALITY
 
 //Add a row
 function addR() {
-    alert("Clicked Add Row");
+    //alert("Clicked Add Row");
     let grid = document.getElementById("grid");
     let newRow = grid.insertRow(-1);
     let newCell = newRow.insertCell();
-    let tableBody = grid.tBodies[0];
     if (numRows === 0) {   
-        newRow;
+        newCell;
         numRows++;
         numCols++;
     }
@@ -29,14 +28,21 @@ function addR() {
 };
 //Add a column
 function addC() {
-    alert("Clicked Add Col")
+    //alert("Clicked Add Col")
     let grid = document.getElementById("grid");
     let tableBody = grid.tBodies[0];
-	for (let i = 0; i < tableBody.rows.length; i++) 
-    {
-		let newCell = tableBody.rows[i].insertCell(-1);
+	if (numCols === 0) {
+        grid.insertRow(0).insertCell();
+        numRows++;
+        numCols++;
     }
-    numCols++;  
+    else {
+        for (let i = 0; i < tableBody.rows.length; i++) 
+        {
+            let newCell = tableBody.rows[i].insertCell(-1);
+        }
+        numCols++; 
+    } 
 }
 
 //Remove a row
