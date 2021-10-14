@@ -51,12 +51,18 @@ function addC() {
 //Remove a row
 function removeR() {
     //alert("Clicked Remove Row")
+    if (numRows === 0) {
+        throw new Error('No rows to be removed');
+    }
     grid.deleteRow(-1);
     numRows--;
 }
 //Remove a column
 function removeC() {
     //alert("Clicked Remove Col")
+    if (numCols === 0) {
+        throw new Error('No columns to be removed');
+    }
     for (let i = 0; i < grid.rows.length; i++) {
         if (grid.rows[i].cells.length > 0) {
             grid.rows[i].deleteCell(-1);
