@@ -84,7 +84,12 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+    //alert("Clicked Fill All")`
+    for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+            grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 function clearAll(){
