@@ -8,6 +8,8 @@ let grid = document.getElementById("grid");
 /*
 things to consider:
 NEED TO ADD COLOR FUNCTIONALITY
+
+throw exception for remove and add rows/cols when grid is empty
 */
 
 //Add a row
@@ -52,6 +54,9 @@ function addC() {
 //Remove a row
 function removeR() {
     //alert("Clicked Remove Row")
+    if (numRows === 0) {
+        throw new Error('No rows to be removed');
+    }
     grid.deleteRow(-1);
     if (numRows > 0) {
         numRows--;
@@ -64,6 +69,9 @@ function removeR() {
 //Remove a column
 function removeC() {
     //alert("Clicked Remove Col")
+    if (numCols === 0) {
+        throw new Error('No columns to be removed');
+    }
     for (let i = 0; i < grid.rows.length; i++) {
         if (grid.rows[i].cells.length > 0) {
             grid.rows[i].deleteCell(-1);
