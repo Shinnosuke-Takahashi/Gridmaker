@@ -28,7 +28,7 @@ function addR() {
         numRows++;
     }
     console.log("numCol:" + numCols +  " numRows: " + numRows);
-};
+}
 //Add a column
 function addC() {
     //alert("Clicked Add Col")
@@ -38,11 +38,9 @@ function addC() {
         numRows++;
         numCols++;
     }
-    //THE ELSE IS BROKEN
     else {  
-        for (let i = 0; i < grid.rows.length; i++) 
-        {
-            grid.rows[i].insertCell(-1).style.backgroundColor = colorSelected;
+        for (let i = 0; i < numRows; i++) {
+            grid.rows[i].appendChild(document.createElement("td"));
         }
         numCols++; 
     } 
