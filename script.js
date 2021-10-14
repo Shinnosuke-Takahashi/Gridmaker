@@ -4,12 +4,6 @@ let numCols = 0;
 let colorSelected;
 let grid = document.getElementById("grid");
 
-
-/*
-things to consider:
-NEED TO ADD COLOR FUNCTIONALITY
-*/
-
 //Add a row
 function addR() {
     //alert("Clicked Add Row");
@@ -17,14 +11,14 @@ function addR() {
     let newCell = newRow.insertCell(-1);
     if (numRows === 0) {
         numCols = 0;   
-        newCell.style.backgroundColor = colorSelected;
+        newCell;
         numRows++;
         numCols++;
     }
     else {
-        newCell.style.backgroundColor = colorSelected;
+        newCell;
         for (let i = 1; i < numCols; i++) {
-            newRow.insertCell(i).style.backgroundColor = colorSelected;
+            newRow.insertCell(i);
         }
         
         numRows++;
@@ -36,13 +30,13 @@ function addC() {
     //alert("Clicked Add Col")
 	if (numCols === 0) {
         numRows = 0;
-        grid.insertRow(-1).insertCell(-1).style.backgroundColor = colorSelected;
+        grid.insertRow(-1).insertCell(-1);
         numRows++;
         numCols++;
     }
     else {  
         for (let i = 0; i < numRows; i++) {
-            grid.rows[i].appendChild(document.createElement("td")).style.backgroundColor = colorSelected;
+            grid.rows[i].appendChild(document.createElement("td"));
         }
         numCols++; 
     } 
@@ -111,5 +105,12 @@ function clearAll(){
 }
 
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    //alert("Clicked Fill All Uncolored")
+    for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+            if (grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor === "" || grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor === "white") {
+                grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor = colorSelected;
+            }
+        }
+    }
 }
