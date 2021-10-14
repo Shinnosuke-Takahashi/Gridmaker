@@ -14,43 +14,52 @@ NEED TO ADD COLOR FUNCTIONALITY
 function addR() {
     //alert("Clicked Add Row");
     let newRow = grid.insertRow(-1);
-    let newCell = newRow.insertCell();
-    if (numRows === 0) {   
-        newCell;
+    let newCell = newRow.insertCell(-1);
+    if (numRows === 0) {
+        numCols = 0;   
+        newCell.style.backgroundColor = colorSelected;
         numRows++;
         numCols++;
     }
     else {
-        newRow;
+        newCell.style.backgroundColor = colorSelected;
         for (let i = 1; i < numCols; i++) {
-            newRow.insertCell(i);
+            newRow.insertCell(i).style.backgroundColor = colorSelected;
         }
+        
         numRows++;
     }
-};
+    console.log("numCol:" + numCols +  " numRows: " + numRows);
+}
 //Add a column
 function addC() {
     //alert("Clicked Add Col")
-    let tableBody = grid.tBodies[0];
 	if (numCols === 0) {
-        grid.insertRow(0).insertCell();
+        numRows = 0;
+        grid.insertRow(-1).insertCell(-1).style.backgroundColor = colorSelected;
         numRows++;
         numCols++;
     }
-    else {
-        for (let i = 0; i < tableBody.rows.length; i++) 
-        {
-            tableBody.rows[i].insertCell(-1);
+    else {  
+        for (let i = 0; i < numRows; i++) {
+            grid.rows[i].appendChild(document.createElement("td")).style.backgroundColor = colorSelected;
         }
         numCols++; 
     } 
+    console.log("numCol:" + numCols +  " numRows: " + numRows);
 }
 
 //Remove a row
 function removeR() {
     //alert("Clicked Remove Row")
     grid.deleteRow(-1);
-    numRows--;
+    if (numRows > 0) {
+        numRows--;
+    }
+    if (numRows === 0) {
+        numCols = 0;
+    }
+    console.log("numCol:" + numCols +  " numRows: " + numRows);
 }
 //Remove a column
 function removeC() {
@@ -60,7 +69,13 @@ function removeC() {
             grid.rows[i].deleteCell(-1);
         }
     }
-    numCols--;
+    if (numCols > 0) {
+        numCols--;
+    }
+    if (numCols === 0) {
+        numRows = 0;
+    }
+    console.log("numCol:" + numCols +  " numRows: " + numRows);
 }
 //sets global var for selected color
 function selected(){
