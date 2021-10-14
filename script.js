@@ -22,8 +22,8 @@ function addR() {
         numCols++;
     }
     else {
-        for (let i = 0; i < numCols; i++) {
-            newCell.style.backgroundColor = colorSelected;
+        for (let i = 1; i < numCols; i++) {
+            newRow.insertCell(i);
         }
         numRows++;
     }
@@ -40,7 +40,7 @@ function addC() {
     }
     //THE ELSE IS BROKEN
     else {  
-        for (let i = 0; i < numCols; i++) 
+        for (let i = 0; i < grid.rows.length; i++) 
         {
             grid.rows[i].insertCell(-1).style.backgroundColor = colorSelected;
         }
