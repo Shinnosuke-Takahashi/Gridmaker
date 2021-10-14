@@ -105,7 +105,7 @@ function fillU(){
     //alert("Clicked Fill All Uncolored")
     for (let i = 0; i < numRows; i++) {
         for (let j = 0; j < numCols; j++) {
-            if (grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor === "white") {
+            if (grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor === "") {
                 grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor = colorSelected;
             }
         }
