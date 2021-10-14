@@ -22,9 +22,11 @@ function addR() {
         numCols++;
     }
     else {
+        newCell.style.backgroundColor = colorSelected;
         for (let i = 1; i < numCols; i++) {
-            newRow.insertCell(i);
+            newRow.insertCell(i).style.backgroundColor = colorSelected;
         }
+        
         numRows++;
     }
     console.log("numCol:" + numCols +  " numRows: " + numRows);
@@ -40,7 +42,7 @@ function addC() {
     }
     else {  
         for (let i = 0; i < numRows; i++) {
-            grid.rows[i].appendChild(document.createElement("td"));
+            grid.rows[i].appendChild(document.createElement("td")).style.backgroundColor = colorSelected;
         }
         numCols++; 
     } 
