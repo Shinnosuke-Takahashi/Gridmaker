@@ -8,6 +8,8 @@ let grid = document.getElementById("grid");
 /*
 things to consider:
 NEED TO ADD COLOR FUNCTIONALITY
+
+throw exception for remove and add rows/cols when grid is empty
 */
 
 //Add a row
