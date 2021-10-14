@@ -87,7 +87,7 @@ function removeC() {
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
     console.log(colorSelected);
-    newCell.onclick = fillSelected() {
+    newCell.onClick = fillSelected() {
         newCell.style.backgroundColor = colorSelected;
     };
 }
