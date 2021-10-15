@@ -2,6 +2,9 @@
 
 Prof. Melissa Lynch - Section 1 Fall 2021
 
+# Link to page:
+https://shinnosuke-takahashi.github.io/Gridmaker/
+
 # Contributors 
 Shinnosuke Takahashi - Shinnosuke-Takahashi  
 Ashley Gong - ashleyg101 
