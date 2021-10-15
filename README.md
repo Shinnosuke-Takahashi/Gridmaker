@@ -14,9 +14,6 @@ Ashley Gong - ashleyg101
 - [x] remove columns from the grid
 - [x] select a color from a dropdown menu of colors
 - [ ] click on a single cell, changing its color to the currently selected color
-- [ ] fill all uncolored cells with the currently selected color
-- [ ] fill all cells with the currently selected color
-- [ ] clear all cells/restore all cells to their original/initial color
-
-# Notes:
-must make it so that new rows/columns have selected color
+- [x] fill all uncolored cells with the currently selected color
+- [x] fill all cells with the currently selected color
+- [x] clear all cells/restore all cells to their original/initial color
