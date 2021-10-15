@@ -7,8 +7,8 @@ let grid = document.getElementById("grid");
 //Add a row
 function addR() {
     //alert("Clicked Add Row");
-    let newRow = grid.insertRow(-1);
-    let newCell = newRow.insertCell(-1);
+    let newRow = grid.appendChild(document.createElement("tr"));
+    let newCell = newRow.appendChild(document.createElement("td"));
     if (numRows === 0) {
         numCols = 0;   
         newCell;
@@ -18,19 +18,18 @@ function addR() {
     else {
         newCell;
         for (let i = 1; i < numCols; i++) {
-            newRow.insertCell(i);
+            newRow.appendChild(document.createElement("td"));
         }
-        
         numRows++;
     }
-    console.log("numCol:" + numCols +  " numRows: " + numRows);
+//    console.log("numCol:" + numCols +  " numRows: " + numRows);
 }
 //Add a column
 function addC() {
     //alert("Clicked Add Col")
 	if (numCols === 0) {
         numRows = 0;
-        grid.insertRow(-1).insertCell(-1);
+        grid.appendChild(document.createElement("tr")).appendChild(document.createElement("td"));
         numRows++;
         numCols++;
     }
@@ -49,7 +48,7 @@ function removeR() {
     if (numRows === 0) {
         throw new Error('No rows to be removed');
     }
-    grid.deleteRow(-1);
+    grid.removeChild(grid.lastElementChild);
     if (numRows > 0) {
         numRows--;
     }
