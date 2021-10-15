@@ -11,14 +11,14 @@ function addR() {
     let newCell = newRow.appendChild(document.createElement("td"));
     if (numRows === 0) {
         numCols = 0;   
-        newCell;
+        newCell.onclick = myOnClick;
         numRows++;
         numCols++;
     }
     else {
-        newCell;
+        newCell.onclick = myOnClick;
         for (let i = 1; i < numCols; i++) {
-            newRow.appendChild(document.createElement("td"));
+            newRow.appendChild(document.createElement("td")).onclick = myOnClick;
         }
         numRows++;
     }
@@ -29,13 +29,13 @@ function addC() {
     //alert("Clicked Add Col")
 	if (numCols === 0) {
         numRows = 0;
-        grid.appendChild(document.createElement("tr")).appendChild(document.createElement("td"));
+        grid.appendChild(document.createElement("tr")).appendChild(document.createElement("td")).onclick = myOnClick;
         numRows++;
         numCols++;
     }
     else {  
         for (let i = 0; i < numRows; i++) {
-            grid.rows[i].appendChild(document.createElement("td"));
+            grid.rows[i].appendChild(document.createElement("td")).onclick = myOnClick;
         }
         numCols++; 
     } 
@@ -112,4 +112,8 @@ function fillU(){
             }
         }
     }
+}
+
+function myOnClick() {
+    this.style.backgroundColor = colorSelected;
 }
