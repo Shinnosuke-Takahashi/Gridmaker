@@ -22,7 +22,7 @@ function addR() {
         }
         numRows++;
     }
-//    console.log("numCol:" + numCols +  " numRows: " + numRows);
+    console.log("numCol:" + numCols +  " numRows: " + numRows);
 }
 //Add a column
 function addC() {
